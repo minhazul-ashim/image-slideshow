@@ -68,6 +68,12 @@ const createSlider = () => {
   // hide image aria
   imagesArea.style.display = 'none';
   const duration = document.getElementById('duration').value || 1000;
+
+  if (duration < 1000) {
+    alert('The values are in milliseconds, Please give a greater than 1000!')
+    return;
+  }
+
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
